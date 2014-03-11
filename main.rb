@@ -23,8 +23,11 @@ get '/videos/new' do
 end
 
 post '/videos/create' do
+  url = params[:url]
+  url_params = CGI.parse(URI.parse(url).query)
+
   sql = "INSERT INTO videos (title, description, url, genre)
-          VALUES ('#{params[:title]}', '#{params[:description]}', '#{params[:url]}', '#{params[:genre]}');"
+          VALUES ('#{params[:title]}', '#{params[:description]}', '#{url_params["v"].first}', '#{params[:genre]}');"
   query_db(sql)
   redirect to('/videos')
 end
