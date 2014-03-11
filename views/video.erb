@@ -1,7 +1,7 @@
 <section class="video">
   <h2><%= @video['title'] %></h2>
   <p>Genre: <%= @video['genre'] %></p>
-  <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @video['url'] %>" frameborder="0" allowfullscreen></iframe>
+  <iframe width="853" height="480" src="//www.youtube.com/embed/<%= @video['url'] %>" frameborder="0" allowfullscreen></iframe>
   <aside class="controls">
     <a href="/videos/<%= @video['id'] %>/edit">Edit</a>
     |

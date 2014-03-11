@@ -5,17 +5,22 @@
   <title>Videos</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <nav>
     <a href="/">Home</a>
     <a href="/videos/new">Add new video</a>
     <a href="/videos">All videos</a>
-    <% @genres.each do |genre| %>
-      <a href="/videos/genre/<%= genre["genre"].downcase %>"><%= genre['genre'] %></a>
-    <% end %>
   </nav>
+  
   <div id="container">
+    <div id="sidebar">
+      <h2>Genres</h2>
+      <% @genres.each do |genre| %>
+        <a href="/videos/genre/<%= genre["genre"].downcase! %>"><%= genre['genre'] %></a>
+      <% end %>
+    </div>
     <%= yield %>
   </div>
 
