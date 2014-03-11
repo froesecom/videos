@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
+require 'uri'
+require 'cgi'
 require 'pry'
 
 before do
@@ -34,7 +36,7 @@ post '/videos/update' do
     url='#{params[:url].gsub("'", "''")}',
     genre='#{params[:genre].gsub("'", "''")}' WHERE id=#{params[:id]}"
   query_db(sql)
-  redirect to("/videos/#{params[:id]}")
+  redirect to("/video/#{params[:id]}")
 end
 
 get '/video/:id' do
