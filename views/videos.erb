@@ -1,0 +1,11 @@
+<h1>Index of videos</h1>
+<ul>
+  <% @videos.each do |video| %>
+    <li>
+      <a class="thumbs" href="/video/<%= video['id'] %>">
+        <%= video['url'] %>
+        <%= video["title"] %>
+      </a>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,10 @@
+<section class="video">
+  <h2><%= @video['title'] %></h2>
+  <p>Genre: <%= @video['genre'] %></p>
+  <%= @video['url'] %>
+  <aside class="controls">
+    <a href="/videos/<%= @video['id'] %>/edit">Edit</a>
+    |
+    <a href="/videos/<%= @video['id'] %>/delete">Delete</a>
+  </aside>
+</section>

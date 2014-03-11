@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Videos</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/videos/new">Add new video</a>
+    <a href="/videos">All videos</a>
+    <% @genres.each do |genre| %>
+      <a href="/videos/genre/<%= genre["genre"].downcase %>"><%= genre['genre'] %></a>
+    <% end %>
+  </nav>
+  <div id="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

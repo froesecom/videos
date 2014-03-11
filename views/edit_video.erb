@@ -1,0 +1,25 @@
+<form action="/videos/update" method="post">
+  <input type="hidden" name="id" value="<%= @video['id'] %>">
+
+  <p>
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title" required value="<%= @video['title'] %>">
+  </p>
+
+  <p>
+    <label for="description">Description: </label>
+    <input type="text" name="description" id="description" required value="<%= @video['description'] %>">
+  </p>
+
+  <p>
+    <label for="url">Embedding code: </label>
+    <input type="text" name="url" id="url" required value="<%= @video['url'] %>">
+  </p>
+
+  <p>
+    <label for="genre">Genre: </label>
+    <input type="text" name="genre" id="genre" required value="<%= @video['genre'] %>">
+  </p>
+
+  <button>Update video!</button>
+</form>
