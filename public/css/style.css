@@ -1,8 +1,22 @@
 body {
   font-family: 'Alegreya Sans SC', sans-serif;
+  padding: 15px;
 }
 
 nav {
   background-color: blue;
   height: 30px;
+}
+#videos_container {
+  margin: 0 15px;
+}
+.videos {
+  width: 300px;
+  display: inline-block;
+}
+nav a {
+  color: white;
+}
+iframe {
+  display: inline;
 }

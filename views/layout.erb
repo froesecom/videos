@@ -7,18 +7,17 @@
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
 </head>
+<nav>
+  <a href="/">Home</a>
+  <a href="/videos/new">Add new video</a>
+  <a href="/videos">All videos</a>
+</nav>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/videos/new">Add new video</a>
-    <a href="/videos">All videos</a>
-  </nav>
-  
   <div id="container">
     <div id="sidebar">
       <h2>Genres</h2>
       <% @genres.each do |genre| %>
-        <a href="/videos/genre/<%= genre["genre"].downcase! %>"><%= genre['genre'] %></a>
+        <a href="/videos/genre/<%= genre["genre"].downcase %>"><%= genre['genre'] %></a>
       <% end %>
     </div>
     <%= yield %>

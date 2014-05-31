@@ -1,12 +1,13 @@
+
 <h1>Index of videos</h1>
-<ul>
-  <% @videos.each do |video| %>
-    <li>
-      <a class="thumbs" href="/video/<%= video['id'] %>">
-         <iframe width="400" height="225" src="//www.youtube.com/embed/<%= video['url'] %>" frameborder="0" allowfullscreen></iframe>
-        <aside class="controls">
-        <%= video["title"] %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+
+<% @videos.each do |video| %>
+    <div class="videos">
+      
+      <a class="thumbs" href="/video/<%= video['id'] %>"><p><%= video["title"] %></p></a>
+      
+      <iframe width="300" height="225" src="//www.youtube.com/embed/<%= video['url'] %>" frameborder="0" allowfullscreen></iframe>
+      <aside class="controls"> 
+    </div>
+  
+<% end %>

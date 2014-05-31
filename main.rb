@@ -1,16 +1,18 @@
 require 'sinatra'
-require 'sinatra/reloader'
-require 'sqlite3'
-require 'uri'
 require 'cgi'
-require 'pry'
+require 'sinatra/reloader'
+require 'pg'
+require 'protected_attributes'
+require 'SQLite3'
+
 
 before do
   @genres = query_db('SELECT DISTINCT genre FROM videos;')
 end
 
 get '/' do
-  erb :home
+  @videos = query_db('SELECT * FROM videos;')
+  erb :videos
 end
 
 get '/videos' do
